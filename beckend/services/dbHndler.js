@@ -12,12 +12,12 @@ const returnRandomUserToken = function (_) {
 const createUser = (userName, language) => {
     const randToken = returnRandomUserToken();
     usersByToken[randToken] = { userName: userName, language: language }; //adding to my fake user collection
-    return {
-        token: randToken
-    }
+    return {token: randToken }
 };
 
-const returnUserByToken = (token) => { return usersByToken[token] }
+const returnUserByToken = (token) => { 
+    return usersByToken[token]
+ }
 
 
 

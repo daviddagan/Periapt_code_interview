@@ -10,7 +10,7 @@ const favoriteLang = function (headers) {
 
     const token = headers['x-authentication']; // Get the token from 'x-authentication' header
     if (token) {
-        console.log(token, " is not null");
+        console.log(token," is not null");
         return userControllers.getUserLangByToken(token) ?? "en";
     }
 

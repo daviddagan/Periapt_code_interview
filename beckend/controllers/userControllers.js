@@ -16,7 +16,7 @@ exports.createUser = function (req, res) {
 
 exports.getUserLangByToken = function (token) {
     try {
-        return dbHandlerService.returnUserByToken(token)[language];
+        return dbHandlerService.returnUserByToken(token)["language"];
     } catch (e) {
     }
 };
