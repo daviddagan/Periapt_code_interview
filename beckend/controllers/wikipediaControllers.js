@@ -12,7 +12,6 @@ exports.getWikiArticleIntroduction = async function (req, res) {
 
         const language = req.headers["accept-language"] || "en" // there is no extra validation yet
         const wikiPage = `${language}.wikipedia.org/wiki`
-        console.log(wikiPage)
         const introductionSelector = "#mw-content-text .mw-parser-output p:nth-of-type(2)" // wikipedia introduction selector
 
         const articleIntroduction = await scrapperService.getArticleIntroduction(wikiPage, articleName, introductionSelector);
