@@ -1,7 +1,7 @@
 const usersByToken = {};
 
 const rand = function () {
-    return Math.random().toString(36).substring(2).slice(0, 4); // remove `0.`
+    return Math.random().toString(36).substring(2).slice(0, 4); // base36 for nums and letters than remove `0.` than only 4 digits
 };
 
 const returnRandomUserToken = function (_) {
@@ -15,13 +15,14 @@ const createUser = (userName, language) => {
     return {
         token: randToken
     }
-
-
 };
+
+const returnUserByToken = (token) => { return usersByToken[token] }
 
 
 
 
 module.exports = {
-    createUser
+    createUser,
+    returnUserByToken,
 };

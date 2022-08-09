@@ -1,10 +1,10 @@
 const dbHandlerService = require("../services/dbHndler");
 
 
-exports.createUser = async function (req, res) {
+exports.createUser = function (req, res) {
     try {
-        const {userName,language} = req.body
-        const token = await dbHandlerService.createUser(userName,language);
+        const { userName, language } = req.body
+        const token = dbHandlerService.createUser(userName, language);
         res.status(200).json(token);
     } catch (e) {
         res.status(500).send({
@@ -14,7 +14,13 @@ exports.createUser = async function (req, res) {
 };
 
 
-
+exports.getUserLangByToken = function (token) {
+    try {
+        return dbHandlerService.returnUserByToken(token)[language];
+    } catch (e) {
+        return "en"
+    }
+};
 
 
 
