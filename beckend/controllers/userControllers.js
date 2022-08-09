@@ -18,7 +18,6 @@ exports.getUserLangByToken = function (token) {
     try {
         return dbHandlerService.returnUserByToken(token)[language];
     } catch (e) {
-        return "en"
     }
 };
 
